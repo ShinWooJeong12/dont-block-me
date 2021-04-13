@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript">
+  var a=0;
+  function minus(){
+    switch(id)
+    var minus_id=document.getElementById('apple_cnt');
+    if(a>0){
+      a-=1;
+    }
+    minus_id.innerHTML=a;
+  }
+</script>
+  <head>
+    <meta charset="utf-8">
+    <title>js_test</title>
+  </head>
+  <body>
+    <div class="image">
+      <center>
+        <img src="apple.jpg" width="100px">
+        <span>&nbsp;</span>
+        <img src="mango.jpg" width="100px">
+        <span>&nbsp;</span>
+        <img src="strawberry.jpg" width="100px">
+        <span>&nbsp;</span>
+      </center>
+    </div>
+    <div class="button">
+      <center>
+        <input type="button" name="minus" value="-" onclick="minus();"/>
+        <span>&nbsp;</span>
+        <a id="apple_cnt"> 0 </a>
+        <span>&nbsp;</span>
+        <input type="button" name="plus" value="+" onclick="plus();"/>
+        <span>&nbsp;</span>
+        <input type="button" name="minus" value="-" onclick="minus();"/>
+        <span>&nbsp;</span>
+        <a id="mango_cnt"> 0 </a>
+        <span>&nbsp;</span>
+        <input type="button" name="plus" value="+" onclick="plus();"/>
+        <span>&nbsp;</span>
+        <input type="button" name="minus" value="-" onclick="minus();"/>
+        <span>&nbsp;</span>
+        <a id="strawberry_cnt"> 0 </a>
+        <span>&nbsp;</span>
+        <input type="button" name="plus" value="+" onclick="plus();"/>
+        <span>&nbsp;</span>
+      </center>
+    </div>
+  </body>
+</html>
