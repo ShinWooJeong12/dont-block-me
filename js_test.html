@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
 <script type="text/javascript">
-  var a=0;
-  function minus(){
-    
-    var minus_id=document.getElementById('apple_cnt');
-    if(a>0){
-      a-=1;
+
+  var aaaa = document.getElementById(id)
+  function minus(obj1, obj2){
+    alert(obj1);
+    var id = obj2+"_cnt";
+    var aaaa = document.getElementById(id);
+
+    if (obj1 == "minus"){
+      var minus_id=document.getElementById(id);
+      if(aaaa>0){
+        aaaa-=1;
+      }
+      minus_id.innerHTML=aaaa;
     }
-    minus_id.innerHTML=a;
+    else  if(obj1 == "plus")
+      var plus_id=document.getElementById(id);
+      if(aaaa<10){
+        aaaa+=1;
+      }
+      plus_id.innerHTML=aaaa;
+    }
+
   }
 </script>
   <head>
@@ -16,6 +30,9 @@
     <title>js_test</title>
   </head>
   <body>
+    <div>
+      Check
+    </div>
     <div class="image">
       <center>
         <img src="apple.jpg" width="100px">
@@ -26,26 +43,42 @@
         <span>&nbsp;</span>
       </center>
     </div>
+    <div class="sb">
+      <center>
+        <p>100000원&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;200000원&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;450000원</p>
+      </center>
+    </div>
     <div class="button">
       <center>
-        <input type="button" name="minus" value="-" onclick="minus();"/>
-        <span>&nbsp;</span>
-        <a id="apple_cnt"> 0 </a>
-        <span>&nbsp;</span>
-        <input type="button" name="plus" value="+" onclick="plus();"/>
-        <span>&nbsp;</span>
-        <input type="button" name="minus" value="-" onclick="minus();"/>
-        <span>&nbsp;</span>
-        <a id="mango_cnt"> 0 </a>
-        <span>&nbsp;</span>
-        <input type="button" name="plus" value="+" onclick="plus();"/>
-        <span>&nbsp;</span>
-        <input type="button" name="minus" value="-" onclick="minus();"/>
-        <span>&nbsp;</span>
-        <a id="strawberry_cnt"> 0 </a>
-        <span>&nbsp;</span>
-        <input type="button" name="plus" value="+" onclick="plus();"/>
-        <span>&nbsp;</span>
+        <div class="apple" id="apple">
+          <input type="button" value="-" id="apple" onclick="minus("minus", this.id);"/>
+          <span>&nbsp;</span>
+          <a id="apple_cnt"> 10 </a>
+          <span>&nbsp;</span>
+          <input type="button"  id="apple" value="+" onclick="plus("plus", this.id);"/>
+          <span>&nbsp;</span>
+        </div>
+        <div class="mango">
+          <input type="button" id="mango" value="-" onclick="minus("minus", this.id);"/>
+          <span>&nbsp;</span>
+          <a id="mango_cnt"> 10 </a>
+          <span>&nbsp;</span>
+          <input type="button"id="mango" value="+" onclick="plus("plus", this.id);"/>
+          <span>&nbsp;</span>
+        </div>
+        <div class="strawberry" id="strawberry">
+          <input type="button" value="-" id="strawberry" onclick="minus("minus", this.id);"/>
+          <span>&nbsp;</span>
+          <a id="strawberry_cnt"> 10 </a>
+          <span>&nbsp;</span>
+          <input type="button" value="+" id="strawberry" onclick="plus("plus", this.id);"/>
+          <span>&nbsp;</span>
+        </div>
+      </center>
+    </div>
+    <div class="price">
+      <center>
+        <p>price = <a id="price">0</a></p>
       </center>
     </div>
   </body>
