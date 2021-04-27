@@ -1,38 +1,64 @@
 <!DOCTYPE html>
 <html>
 <script type="text/javascript">
-
-  var aaaa = document.getElementById(id)
+  var yee=0;
+  var aaaa=0;
+  var dddd=0;
   function minus(obj1, obj2){
-    alert(obj1);
-    var id = obj2+"_cnt";
-    var aaaa = document.getElementById(id);
-
+    var id=obj2+"_cnt";
+    dddd=document.getElementById('price');
+    aaaa=parseInt(document.getElementById(id).innerHTML);
     if (obj1 == "minus"){
       var minus_id=document.getElementById(id);
       if(aaaa>0){
         aaaa-=1;
+        switch(id){
+          case "apple_cnt":
+            yee-=100000;
+            break;
+
+          case "mango_cnt":
+            yee-=200000;
+            break;
+
+          case "strawberry_cnt":
+            yee-=450000;
+            break;
+        }
       }
       minus_id.innerHTML=aaaa;
+      dddd.innerHTML=yee;
     }
     else  if(obj1 == "plus")
+    {
       var plus_id=document.getElementById(id);
       if(aaaa<10){
         aaaa+=1;
+        switch(id){
+          case "apple_cnt":
+            yee+=100000;
+            break;
+
+          case "mango_cnt":
+            yee+=200000;
+            break;
+
+          case "strawberry_cnt":
+            yee+=450000;
+            break;
+        }
       }
       plus_id.innerHTML=aaaa;
+      dddd.innerHTML=yee;
     }
-
   }
 </script>
   <head>
     <meta charset="utf-8">
     <title>js_test</title>
+    <h1 style="text-align:center;">개같은 과일가게</h1>
   </head>
   <body>
-    <div>
-      Check
-    </div>
     <div class="image">
       <center>
         <img src="apple.jpg" width="100px">
@@ -43,42 +69,35 @@
         <span>&nbsp;</span>
       </center>
     </div>
+
     <div class="sb">
       <center>
         <p>100000원&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;200000원&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;450000원</p>
       </center>
     </div>
-    <div class="button">
+    <center>
+      <input type="button" value="-" id="apple" onclick="minus('minus', this.id)"/>
+      <span>&nbsp;</span>
+      <a style="font-size:10px;" id="apple_cnt"> 0 </a>
+      <span>&nbsp;</span>
+      <input type="button"  id="apple" value="+" onclick="minus('plus', this.id)"/>
+      <span>&nbsp;</span>
+      <input type="button" id="mango" value="-" onclick="minus('minus', this.id)"/>
+      <span>&nbsp;</span>
+      <a style="font-size:20px;" id="mango_cnt"> 0 </a>
+      <span>&nbsp;</span>
+      <input type="button"id="mango" value="+" onclick="minus('plus', this.id)"/>
+      <span>&nbsp;</span>
+      <input type="button" value="-" id="strawberry" onclick="minus('minus', this.id)"/>
+      <span>&nbsp;</span>
+      <a style="font-size:30px;" id="strawberry_cnt"> 0 </a>
+      <span>&nbsp;</span>
+      <input type="button" value="+" id="strawberry" onclick="minus('plus', this.id)"/>
+      <span>&nbsp;</span>
+    </center>
+    <div class="totalPrice">
       <center>
-        <div class="apple" id="apple">
-          <input type="button" value="-" id="apple" onclick="minus("minus", this.id);"/>
-          <span>&nbsp;</span>
-          <a id="apple_cnt"> 10 </a>
-          <span>&nbsp;</span>
-          <input type="button"  id="apple" value="+" onclick="plus("plus", this.id);"/>
-          <span>&nbsp;</span>
-        </div>
-        <div class="mango">
-          <input type="button" id="mango" value="-" onclick="minus("minus", this.id);"/>
-          <span>&nbsp;</span>
-          <a id="mango_cnt"> 10 </a>
-          <span>&nbsp;</span>
-          <input type="button"id="mango" value="+" onclick="plus("plus", this.id);"/>
-          <span>&nbsp;</span>
-        </div>
-        <div class="strawberry" id="strawberry">
-          <input type="button" value="-" id="strawberry" onclick="minus("minus", this.id);"/>
-          <span>&nbsp;</span>
-          <a id="strawberry_cnt"> 10 </a>
-          <span>&nbsp;</span>
-          <input type="button" value="+" id="strawberry" onclick="plus("plus", this.id);"/>
-          <span>&nbsp;</span>
-        </div>
-      </center>
-    </div>
-    <div class="price">
-      <center>
-        <p>price = <a id="price">0</a></p>
+        <p>total price = <a id="price">0</a></p>
       </center>
     </div>
   </body>
