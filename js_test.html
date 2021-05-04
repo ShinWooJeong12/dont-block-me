@@ -12,6 +12,7 @@
       var minus_id=document.getElementById(id);
       if(aaaa>0){
         aaaa-=1;
+
         switch(id){
           case "apple_cnt":
             yee-=100000;
@@ -27,6 +28,15 @@
         }
       }
       minus_id.innerHTML=aaaa;
+      if(aaaa==0){
+        minus_id.style.fontSize=0.1+'em';
+      }
+      else{
+        minus_id.style.fontSize=aaaa+'em';
+      }
+      if(aaaa!=10){
+        minus_id.style.color="black";
+      }
       dddd.innerHTML=yee;
     }
     else  if(obj1 == "plus")
@@ -49,6 +59,13 @@
         }
       }
       plus_id.innerHTML=aaaa;
+      plus_id.style.fontSize=aaaa+'em';
+      if(aaaa==10){
+        plus_id.style.color="red";
+      }
+      else{
+        plus_id.style.color="black";
+      }
       dddd.innerHTML=yee;
     }
   }
@@ -56,7 +73,7 @@
   <head>
     <meta charset="utf-8">
     <title>js_test</title>
-    <h1 style="text-align:center;">개같은 과일가게</h1>
+    <h1 style="text-align:center;">과일가게</h1>
   </head>
   <body>
     <div class="image">
@@ -78,19 +95,19 @@
     <center>
       <input type="button" value="-" id="apple" onclick="minus('minus', this.id)"/>
       <span>&nbsp;</span>
-      <a style="font-size:10px;" id="apple_cnt"> 0 </a>
+      <a style="font-size:0.1em;" id="apple_cnt"> 0 </a>
       <span>&nbsp;</span>
       <input type="button"  id="apple" value="+" onclick="minus('plus', this.id)"/>
       <span>&nbsp;</span>
       <input type="button" id="mango" value="-" onclick="minus('minus', this.id)"/>
       <span>&nbsp;</span>
-      <a style="font-size:20px;" id="mango_cnt"> 0 </a>
+      <a style="font-size:0.1em;" id="mango_cnt"> 0 </a>
       <span>&nbsp;</span>
       <input type="button"id="mango" value="+" onclick="minus('plus', this.id)"/>
       <span>&nbsp;</span>
       <input type="button" value="-" id="strawberry" onclick="minus('minus', this.id)"/>
       <span>&nbsp;</span>
-      <a style="font-size:30px;" id="strawberry_cnt"> 0 </a>
+      <a style="font-size:0.1em;" id="strawberry_cnt"> 0 </a>
       <span>&nbsp;</span>
       <input type="button" value="+" id="strawberry" onclick="minus('plus', this.id)"/>
       <span>&nbsp;</span>
