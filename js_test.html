@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html>
+<style>
+  @media(max-width:500px){
+    .sb{
+      display:none;
+    }
+  }
+</style>
 <script type="text/javascript">
   var yee=0;
   var aaaa=0;
@@ -69,13 +76,24 @@
       dddd.innerHTML=yee;
     }
   }
+  function screen(hi){
+    yee=document.getElementById('body');
+    if(hi=="dark"){
+      yee.style.backgroundColor="black";
+      yee.style.color="white";
+    }
+    else if(hi=="bright"){
+      yee.style.backgroundColor="white";
+      yee.style.color="black";
+    }
+  }
 </script>
   <head>
     <meta charset="utf-8">
     <title>js_test</title>
     <h1 style="text-align:center;">과일가게</h1>
   </head>
-  <body>
+  <body id="body">
     <div class="image">
       <center>
         <img src="apple.jpg" width="100px">
@@ -117,5 +135,7 @@
         <p>total price = <a id="price">0</a></p>
       </center>
     </div>
+    <input type="button" value="dark" onclick="screen('dark')"/>
+    <input type="button" value="bright" onclick="screen('bright')"/>
   </body>
 </html>
