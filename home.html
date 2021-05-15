@@ -5,6 +5,17 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
+    <script type="text/javascript">
+      function but_effon0(id){
+        chge=document.getElementById(id);
+        chge.style.backgroundColor="skyblue";
+      }
+
+      function but_effon1(id){
+        chge=document.getElementById(id);
+        chge.style.backgroundColor="#2F7AF4"
+      }
+    </script>
     <div class="wrap">
       <div class="intro_bg">
         <div class="header" id="link-header">
@@ -68,7 +79,7 @@
             <div class="contents2">
               우리는 계획적으로 단속을 피해서 치밀하게 일을 처리합니다.
             </div>
-            <div class="more">MORE</div>
+            <div class="more" id="but1" onmouseover="but_effon0(this.id);" onmouseout="but_effon1(this.id);">MORE</div>
           </li>
           <li>
             <div class="icon-img">
@@ -78,7 +89,7 @@
             <div class="contents2">
               우리는 언제든지 환술에 걸린 것처럼 순식간에 시야에서 사라질 수 있습니다.
             </div>
-            <div class="more">MORE</div>
+            <div class="more"id="but2" onmouseover="but_effon0(this.id);" onmouseout="but_effon1(this.id);">MORE</div>
           </li>
           <li>
             <div class="icon-img">
@@ -88,7 +99,7 @@
             <div class="contents2">
               다량의 오징어를 한번에 싹쓸이하여 시중에 유통할 수 있는 기술력이 있습니다.
             </div>
-            <div class="more">MORE</div>
+            <div class="more"id="but3" onmouseover="but_effon0(this.id);" onmouseout="but_effon1(this.id);">MORE</div>
           </li>
         </ul>
       </div>
